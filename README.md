@@ -32,7 +32,7 @@ This is a Laravel based Contact Manager RESTful API that supports full CRUD oper
 1. Clone the repository:
    ```bash
    git clone https://github.com/mansighetiya/contact-manager-api.git
-   cd contact-manager
+   cd contact-manager-api
    ```
 
 2. Install dependencies:
