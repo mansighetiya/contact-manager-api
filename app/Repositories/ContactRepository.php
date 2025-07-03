@@ -40,7 +40,9 @@ class ContactRepository implements ContactRepositoryInterface
     public function update(int $id, array $data): Contact
     {
         $contact = Contact::findOrFail($id);
+
         $contact->update($data);
+
         return $contact;
     }
 
@@ -50,6 +52,7 @@ class ContactRepository implements ContactRepositoryInterface
     public function delete(int $id): bool
     {
         $contact = Contact::findOrFail($id);
+
         return $contact->delete();
     }
 }

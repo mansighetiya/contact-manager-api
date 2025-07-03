@@ -2,12 +2,12 @@
 
 namespace App\Http\Requests\Contact;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\BaseFormRequest;
 
 /**
  * Class StoreContactRequest
  */
-class StoreContactRequest extends FormRequest
+class StoreContactRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -39,7 +39,10 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request): ContactResource
     {
-        $contact = $this->repo->create($request->validated());
+        $validated = $request->validated();
+
+        $contact = $this->repo->create($validated);
+
         return new ContactResource($contact);
     }
 
@@ -51,7 +54,9 @@ class ContactController extends Controller
      */
     public function show(int $id): ContactResource
     {
-        return new ContactResource($this->repo->find($id));
+        $contact = $this->repo->find($id);
+
+        return new ContactResource($contact);
     }
 
     /**
@@ -63,7 +68,10 @@ class ContactController extends Controller
      */
     public function update(UpdateContactRequest $request, int $id): ContactResource
     {
-        $contact = $this->repo->update($id, $request->validated());
+        $validated = $request->validated();
+
+        $contact = $this->repo->update($id, $validated);
+
         return new ContactResource($contact);
     }
 

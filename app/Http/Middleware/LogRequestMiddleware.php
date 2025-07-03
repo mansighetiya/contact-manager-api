@@ -16,11 +16,10 @@ class LogRequestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        Log::info('Incoming Request', [
-            'method' => $request->getMethod(),
-            'url'    => $request->fullUrl(),
-            'ip'     => $request->ip(),
-            'body'   => $request,
+        Log::info('Request', [
+            'url'  => $request->fullUrl(),
+            'ip'   => $request->ip(),
+            'body' => $request->all(),
         ]);
 
         return $next($request);
